@@ -41,7 +41,7 @@ if (pay > (pay * 0.13) + pay) {
 } else (rating <= 2) 
     bonus += 0;
 
-bonus = parseInt(bonus, 10);
+
 
 return ["Name: " + name, bonus + "%", "$" + (pay + (bonus/100 * pay)), "$" + (pay * (bonus / 100))]; 
 
