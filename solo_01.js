@@ -26,11 +26,7 @@ var compensation = function(Employee) {
    var rating = Employee.rating;
    var name = Employee.name;
    pay = parseInt(pay, 10);
-if (pay > (pay * 0.13) + pay) {
-    pay = (pay * 0.13) + pay;
-} else if (pay > 65000) {
-	bonus -= 1;
-} else if (number.length === 4) {
+ if (number.length === 4) {
 	bonus += 5;
 } else if (rating === 5) {
 	bonus += 10;
@@ -41,14 +37,28 @@ if (pay > (pay * 0.13) + pay) {
 } else (rating <= 2) 
     bonus += 0;
 
+if(pay > 65000) {
+	bonus -= 1;
+}    
+
+if (bonus > 13) {
+    bonus = 13;
+} 
 
 
-return ["Name: " + name, bonus + "%", "$" + (pay + (bonus/100 * pay)), "$" + (pay * (bonus / 100))]; 
+return ["Name: " + name, bonus + "%", "$" + Math.round((pay + (bonus/100 * pay))), "$" + Math.round((pay * (bonus / 100)))]; 
+
+
+
 
 }
 
-console.log(compensation(jem));
 
+
+console.log(compensation(atticus));
+console.log(compensation(jem));
+console.log(compensation(boo));
+console.log(compensation(scout));
 
 
     
