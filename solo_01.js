@@ -25,8 +25,9 @@ var compensation = function(Employee) {
    var number = Employee.number;
    var rating = Employee.rating;
    var name = Employee.name;
-if (pay > pay * 0.13 + pay) {
-    pay = pay * 0.13 + pay;
+   pay = parseInt(pay, 10);
+if (pay > (pay * 0.13) + pay) {
+    pay = (pay * 0.13) + pay;
 } else if (pay > 65000) {
 	bonus -= 1;
 } else if (number.length === 4) {
@@ -40,9 +41,9 @@ if (pay > pay * 0.13 + pay) {
 } else (rating <= 2) 
     bonus += 0;
 
-pay = parseInt(pay, 10);
+bonus = parseInt(bonus, 10);
 
-return ["Name: " + name, bonus + "%", "$" + pay + bonus, "$" + (pay * (bonus / 100))]; 
+return ["Name: " + name, bonus + "%", "$" + (pay + (bonus/100 * pay)), "$" + (pay * (bonus / 100))]; 
 
 }
 
